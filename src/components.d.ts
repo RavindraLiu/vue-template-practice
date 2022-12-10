@@ -7,16 +7,25 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AppHeader: typeof import('./components/AppHeader/index.vue')['default']
+    AppMain: typeof import('./components/AppMain.vue')['default']
     Counter: typeof import('./components/Counter/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sidebar: typeof import('./components/Sidebar/index.vue')['default']
     SidebarItem: typeof import('./components/Sidebar/SidebarItem.vue')['default']
+    SidebarItemLink: typeof import('./components/Sidebar/SidebarItemLink.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
   }
 }

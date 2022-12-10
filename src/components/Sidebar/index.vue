@@ -1,28 +1,34 @@
 <template>
-  <h4 @click="isCollapse = !isCollapse">展开测试</h4>
+  <h4 @click="isCollapse = !isCollapse">展收测试</h4>
   <el-menu
     class="sidebar-container-menu"
     mode="vertical"
     :default-active="activeMenu"
-    :background-color="scssVariables.menuText"
+    :background-color="scssVariables.menuBg"
     :text-color="scssVariables.menuText"
     :active-text-color="scssVariables.menuActiveText"
     :collapse="isCollapse"
-    collapse-transition
+    :collapse-transition="true"
   >
-    <SidebarItem></SidebarItem>
+    <!-- 循环sidebar-item -->
+    <sidebar-item
+      v-for="route in menuRoutes"
+      :key="route.path"
+      :item="route"
+      :base-path="route.path"
+    >
+    </sidebar-item>
   </el-menu>
 </template>
 
 <script lang="ts" setup>
-import scssVariables from "@/assets/styles/variables.module.scss"
-import SidebarItem from "./SidebarItem.vue"
 import { ref, computed } from "vue"
 import { useRoute } from "vue-router"
-
+import scssVariables from "@/assets/styles/variables.module.scss"
+import SidebarItem from "./SidebarItem.vue"
+import routes from "@/router/routes"
 const route = useRoute()
 const activeMenu = computed(() => route.path)
 const isCollapse = ref(false)
+const menuRoutes = computed(() => routes)
 </script>
-
-<style scoped lang="scss"></style>

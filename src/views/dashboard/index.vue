@@ -6,6 +6,9 @@
     class-name="custom-class"
     @click="sayHi"
   ></svg-icon>
+  <br />
+  <br />
+  缓存测试 <input type="text" />
   <el-button @click="sayHi">按钮</el-button>
 </template>
 
@@ -17,7 +20,7 @@ const sayHi = () => {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 .custom-class {
   font-size: 200px;
   color: green;

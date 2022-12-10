@@ -6,6 +6,7 @@
 </template>
 
 <script setup lang="ts">
+// 返回的是一个对象
 import { useCounterStore } from "@/store/counter"
 const counter = useCounterStore()
 

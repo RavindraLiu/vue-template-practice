@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    "preset-default",
+    "preset-default", // 默认插件配置
     {
       name: "removeAttrs",
       params: {

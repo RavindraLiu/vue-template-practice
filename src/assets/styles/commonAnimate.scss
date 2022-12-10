@@ -1,0 +1,8 @@
+$move-animate-time: 1000ms;
+$opacity-animate-time: 1000ms;
+@function getMoveAnimateTime($times) {
+  @return $move-animate-time * $times;
+}
+@function getOpacity($times) {
+  @return $opacity-animate-time * $times;
+}

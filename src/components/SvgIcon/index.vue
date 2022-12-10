@@ -8,20 +8,16 @@
   ></div>
   <!-- SVG icon 通过名称使用 -->
   <svg v-else :class="svgClass" aria-hidden="true" v-bind="$attrs">
-    <!-- 
-       SVG中的use元素可以调用其他SVG文件的元素，<use xlink:href="#symbolId"></use>
-    -->
+    <!--
+  SVG中的use元素可以调用其他SVG文件的元素，<use xlink:href="#symbolId">
+  </use>
+  -->
     <use :xlink:href="iconName" />
   </svg>
 </template>
-
 <script setup lang="ts">
+import { isExternal } from "@/utils/validate"
 import { computed } from "vue"
-// import { isExternal } from "@/utils/validate"
-const isExternal = (path: string): boolean => {
-  return /^(https?:|mailto:|tel:)/.test(path)
-}
-
 const props = defineProps<{ iconClass: string; className?: string }>()
 // 是否是带协议的图片链接
 const isExt = computed(() => isExternal(props.iconClass || ""))
@@ -37,7 +33,6 @@ const styleExternalIcon = computed(() => ({
   "-webkit-mask": `url(${props.iconClass}) no-repeat 50% 50%`
 }))
 </script>
-
 <style scoped>
 .svg-icon {
   width: 1em;

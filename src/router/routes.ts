@@ -16,7 +16,8 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
           ),
         meta: {
           title: "Documentation",
-          icon: "documentation"
+          icon: "documentation",
+          hidden: true
         }
       }
     ]
@@ -33,7 +34,8 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
           import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
         meta: {
           title: "Guide",
-          icon: "guide"
+          icon: "guide",
+          hidden: true
         }
       }
     ]
@@ -53,7 +55,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
           import(/* webpackChunkName: "menu" */ "@/views/system/menu.vue"),
         meta: {
           title: "Menu Management",
-          icon: "list"
+          hidden: true
         }
       },
       {
@@ -61,8 +63,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         component: () =>
           import(/* webpackChunkName: "role" */ "@/views/system/role.vue"),
         meta: {
-          title: "Role Management",
-          icon: "list"
+          title: "Role Management"
         }
       },
       {
@@ -70,8 +71,21 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         component: () =>
           import(/* webpackChunkName: "user" */ "@/views/system/user.vue"),
         meta: {
-          title: "User Management",
-          icon: "list"
+          title: "User Management"
+        }
+      }
+    ]
+  },
+  {
+    path: "/external-link",
+    component: Layout,
+    children: [
+      {
+        path: "http://www.zhufengpeixun.com",
+        redirect: "/",
+        meta: {
+          title: "External Link",
+          icon: "link"
         }
       }
     ]
@@ -92,7 +106,7 @@ const constantRoutes: Array<RouteRecordRaw> = [
             /* webpackChunkName: "dashboard" */ "@/views/dashboard/index.vue"
           ),
         meta: {
-          title: "Dashboard",
+          title: "dashboard",
           icon: "dashboard"
         }
       }

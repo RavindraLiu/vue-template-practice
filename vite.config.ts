@@ -32,10 +32,10 @@ export default defineConfig({
   plugins: [
     vue(),
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), "src/icons/svg")],
-      symbolId: "icon-[name]",
-      inject: "body-last",
-      customDomId: "__svg__icons__dom__"
+      iconDirs: [path.resolve(process.cwd(), "src/icons/svg")], // icon存放目录
+      symbolId: "icon-[name]", // symbol的id
+      inject: "body-last", // 插入位置
+      customDomId: "__svg__icons__dom__" // svg的id
     }),
     AutoImport({
       imports: ["vue", "vue-router"], // 顺便自动导入 vue vue-router

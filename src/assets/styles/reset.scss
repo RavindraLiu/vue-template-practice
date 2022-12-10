@@ -1,16 +1,29 @@
-// 重置css
-
-html,
-body {
+html {
   height: 100%;
   box-sizing: border-box;
+}
+
+body {
+  height: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei, Arial, sans-serif;
+  Microsoft
+  YaHei, Arial, sans-serif;
 }
-
 #app {
   height: 100%;
+}
+
+a:focus,
+a:active {
+outline: none;
+}
+a,
+a:focus,
+a:hover {
+cursor: pointer;
+color: inherit;
+text-decoration: none;
 }
